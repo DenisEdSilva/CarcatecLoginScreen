@@ -54,7 +54,7 @@ export default function Login() {
 				<WrapLogin registrar={registry}>
 					{registry ? (
 						// renderização da area de login
-						<form className='formLogin'>
+						<FormLogin>
 							<span className="loginTitle">Bem Vindo!</span>
 				
 							<div className="wrapInput">
@@ -84,10 +84,10 @@ export default function Login() {
 								<span className="textRegistry">Não possui uma conta?</span>
 								<button className="registry" onClick={handleRegistry} >Criar conta.</button>
 							</div>
-						</form>
+						</FormLogin>
 					) : (
 						// renderização da area de registros
-						<form className='formRegistry'>
+						<FormRegistry>
 							<span className="loginTitle">Bem Vindo!</span>
 							<div className="wrapInput">
 								<input
@@ -134,7 +134,7 @@ export default function Login() {
 								<span className="textRegistry">Já possui uma conta?</span>
 								<button className="registry" onClick={handleRegistry} >Acessar conta.</button>
 							</div>
-						</form>
+						</FormRegistry>
 					)}
 				</WrapLogin >
 			</div>
@@ -161,4 +161,24 @@ const WrapLogin = styled.div`
 	
 	animation-name: ${props => (props.registrar ? slideDownAnimation : slideUpAnimation )};
 	animation-duration: 1s;
-	`;
+`;
+
+const opacityAnimation = keyframes`
+	0% {  opacity: 0 }
+`;
+
+export const FormLogin = styled.form`
+	width: 100%;
+	opacity: 1;
+
+	animation-name: ${opacityAnimation};
+	animation-duration: 2s;
+`;
+
+export const FormRegistry = styled.form`
+	width: 100%;
+	opacity: 1;
+
+	animation-name: ${opacityAnimation};
+	animation-duration: 2s;
+`;
