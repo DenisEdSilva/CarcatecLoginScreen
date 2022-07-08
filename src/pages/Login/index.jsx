@@ -55,7 +55,7 @@ export default function Login() {
 					{registry ? (
 						// renderização da area de login
 						<FormLogin>
-							<span className="loginTitle">Bem Vindo!</span>
+							<span className="loginTitle">Welcome!</span>
 				
 							<div className="wrapInput">
 								<input
@@ -81,14 +81,14 @@ export default function Login() {
 							</div>
 
 							<div className="textSpace">
-								<span className="textRegistry">Não possui uma conta?</span>
-								<button className="registry" onClick={handleRegistry} >Criar conta.</button>
+								<span className="textRegistry">Don't have an account?</span>
+								<button className="registry" onClick={handleRegistry} >Click here.</button>
 							</div>
 						</FormLogin>
 					) : (
 						// renderização da area de registros
 						<FormRegistry>
-							<span className="loginTitle">Bem Vindo!</span>
+							<span className="loginTitle">Welcome!</span>
 							<div className="wrapInput">
 								<input
 									className={nome !== '' ? 'hasValue input' : 'input'}
@@ -96,7 +96,7 @@ export default function Login() {
 									value={nome}
 									onChange={(text) => setNome(text.target.value)}
 								/>
-								<span className="focusInput" dataPlaceholder="Nome" ></span>
+								<span className="focusInput" dataPlaceholder="Name" ></span>
 							</div>
 							<div className="wrapInput">
 								<input
@@ -131,8 +131,8 @@ export default function Login() {
 							</div>
 
 							<div className="textSpace">
-								<span className="textRegistry">Já possui uma conta?</span>
-								<button className="registry" onClick={handleRegistry} >Acessar conta.</button>
+								<span className="textRegistry">Have an account?</span>
+								<button className="registry" onClick={handleRegistry} >Click here.</button>
 							</div>
 						</FormRegistry>
 					)}
@@ -172,7 +172,7 @@ export const FormLogin = styled.form`
 	opacity: 1;
 
 	animation-name: ${opacityAnimation};
-	animation-duration: 2s;
+	animation-duration: 2.3s;
 `;
 
 export const FormRegistry = styled.form`
