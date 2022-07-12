@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
-	  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+	  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', height: '100vh'}}>
 		  <h1 style={{ fontWeight: 'bold', }}>Essa é a tela do Home</h1>
 		  <span style={{ fontSize: 18 }}>Seja bem vindo!</span>
 

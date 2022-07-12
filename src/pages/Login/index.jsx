@@ -96,7 +96,16 @@ export default function Login() {
 									value={nome}
 									onChange={(text) => setNome(text.target.value)}
 								/>
-								<span className="focusInput" dataPlaceholder="Name" ></span>
+								<span className="focusInput" dataPlaceholder="Nome" ></span>
+							</div>
+							<div className="wrapInput">
+								<input
+									className={cpf !== '' ? 'hasValue input' : 'input'}
+									type="text"
+									value={cpf}
+									onChange={maskedCpf}
+								/>
+								<span className="focusInput" dataPlaceholder="CPF" ></span>
 							</div>
 							<div className="wrapInput">
 								<input
@@ -115,15 +124,6 @@ export default function Login() {
 									onChange={(text) => setPassword(text.target.value)}
 								/>
 								<span className="focusInput" dataPlaceholder="Password" ></span>
-							</div>
-							<div className="wrapInput">
-								<input
-									className={cpf !== '' ? 'hasValue input' : 'input'}
-									type="text"
-									value={cpf}
-									onChange={maskedCpf}
-								/>
-								<span className="focusInput" dataPlaceholder="CPF" ></span>
 							</div>
 
 							<div className="containerLoginFormBtn">
