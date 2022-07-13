@@ -11,6 +11,18 @@ export default function Login() {
 	const [registry, setRegistry] = useState(true);
 	const [nome, setNome] = useState('');
 	const [cpf, setCpf] = useState('');
+	
+	async function handleSignIn(e) {
+		e.preventDefault();
+		try {
+			const response = await fetch("http://localhost:3456/user")
+			const data = await response.json()
+			validateSignIn(data)
+		} catch (error) {
+			console.error(error)
+		}
+
+	} 
 
 	function handleRegistry(event) {
 
@@ -27,10 +39,19 @@ export default function Login() {
 		event.preventDefault();
 	}
 
-	function handleSignIn() {
-		if(email === 'teste@teste.com' && password === '123123') {
-			navigation("/Home")
+	function validateSignIn(users) {
+		for (let user of users) {
+			if (user.email === email && user.password === password) {
+				navigation('/Home', user.nome)
+			} else {
+				throw alert("Error 401: usuario não registrado.")
+			}
 		}
+
+
+		// if(email === 'teste@teste.com' && password === '123123') {
+		// 	navigation("/Home")
+		// }
 	}
 
 	const cpfMask = value => {
@@ -41,6 +62,7 @@ export default function Login() {
 			.replace(/(\d{3})(\d{1,2})/, '$1-$2')
 			.replace(/(-\d{2})\d+?$/, '$1') // captura 2 numeros seguidos de um traço e não deixa ser digitado mais nada
 	}
+
 
 	function maskedCpf(event){
 		const { value } = event.target
