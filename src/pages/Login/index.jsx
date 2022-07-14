@@ -43,15 +43,10 @@ export default function Login() {
 		for (let user of users) {
 			if (user.email === email && user.password === password) {
 				navigation('/Home', user.nome)
-			} else {
-				throw alert("Error 401: usuario não registrado.")
-			}
-		}
-
-
-		// if(email === 'teste@teste.com' && password === '123123') {
-		// 	navigation("/Home")
-		// }
+				return
+			} 
+		} 
+		throw alert("Error 401: usuario não registrado.")
 	}
 
 	const cpfMask = value => {
